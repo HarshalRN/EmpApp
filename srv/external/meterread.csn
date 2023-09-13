@@ -1,0 +1,3879 @@
+{
+ "meta": {
+  "creator": "cds-dk 7.0.2"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "meterread": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.message.scope.supported": "true",
+   "@sap.supported.formats": "atom json xlsx pdf"
+  },
+  "meterread.C_BPEMCaseTP": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "BPEM Case",
+   "elements": {
+    "BPEMCase": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "notNull": true
+    },
+    "AcceptBPEMCase_ac": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Action Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "CompleteBPEMCase_ac": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Action Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "ForwardBPEMCase_ac": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Action Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "ReturnBPEMCase_ac": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Action Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "BPEMBusinessProcessCode": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMBusinessProcessCode/BPEMBusinessProcessCode_Text",
+     "@sap.label": "Business Process",
+     "@sap.quickinfo": "Business Process Code",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCaseStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.text": "to_BPEMCaseStatus/BPEMCaseStatus_Text",
+     "@sap.label": "Processing Status",
+     "@sap.quickinfo": "Processing Status of Clarification Case",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCaseCategory": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMCaseCategory/BPEMCaseCategory_Text",
+     "@sap.label": "Case Category",
+     "@sap.quickinfo": "Clarification Case Category",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCasePriority": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMCasePriority/BPEMCasePriority_Text",
+     "@sap.label": "Case Priority",
+     "@sap.quickinfo": "Clarification Case Priority",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCaseOriginalDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Original Date",
+     "@sap.quickinfo": "Original Date of Clarification Case"
+    },
+    "BPEMCaseCurrentProcessor": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "UserDescription",
+     "@sap.label": "Processor",
+     "@sap.quickinfo": "Processor for Clarification Case"
+    },
+    "BPEMCasePreviousProcessor": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "LastChangedByUserDescription",
+     "@sap.label": "Previous Processor"
+    },
+    "UserDescription": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "User Description",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "LastChangedByUserDescription": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "User Description",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "BPEMCaseForwardingReason": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMCaseForwardReason/BPEMCaseForwardingReason_Text",
+     "@sap.label": "Forwarding Reason",
+     "@sap.quickinfo": "Reason for Forwarding",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCaseDueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Due Date",
+     "@sap.quickinfo": "Case Due Date"
+    },
+    "BPEMCaseCreationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Created On",
+     "@sap.quickinfo": "Record Created On"
+    },
+    "to_BPEMBusinessProcessCode": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMBusinessProcessCode",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMBusinessProcessCode",
+        "BPEMBusinessProcessCode"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMBusinessProcessCode"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCaseCategory": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCaseCategory",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCaseCategory",
+        "BPEMCaseCategory"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseCategory"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCaseForwardReason": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCaseForwardReason",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCaseForwardReason",
+        "BPEMCaseForwardingReason"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseForwardingReason"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCasePriority": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCasePriority",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCasePriority",
+        "BPEMCasePriority"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCasePriority"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCaseStatus": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCaseStatus",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCaseStatus",
+        "BPEMCaseStatus"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseStatus"
+       ]
+      }
+     ]
+    },
+    "to_PreviousUser": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_User",
+     "on": [
+      {
+       "ref": [
+        "to_PreviousUser",
+        "UserID"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCasePreviousProcessor"
+       ]
+      }
+     ]
+    },
+    "to_User": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_User",
+     "on": [
+      {
+       "ref": [
+        "to_User",
+        "UserID"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseCurrentProcessor"
+       ]
+      }
+     ]
+    }
+   },
+   "actions": {
+    "AcceptBPEMCase": {
+     "kind": "action",
+     "returns": {
+      "type": "meterread.C_BPEMCaseTP"
+     }
+    },
+    "CompleteBPEMCase": {
+     "kind": "action",
+     "returns": {
+      "type": "meterread.C_BPEMCaseTP"
+     }
+    },
+    "ForwardBPEMCase": {
+     "kind": "action",
+     "params": {
+      "BPEMCaseForwardingReason": {
+       "type": "cds.String",
+       "length": 4,
+       "@sap.label": "Forwarding Reason"
+      },
+      "BPEMCaseProcessor": {
+       "type": "cds.String",
+       "length": 12,
+       "@sap.label": "Processor"
+      }
+     },
+     "returns": {
+      "type": "meterread.C_BPEMCaseTP"
+     }
+    },
+    "ReturnBPEMCase": {
+     "kind": "action",
+     "params": {
+      "BPEMCaseReturnReason": {
+       "type": "cds.String",
+       "length": 4,
+       "@sap.label": "Reason for Return"
+      }
+     },
+     "returns": {
+      "type": "meterread.C_BPEMCaseTP"
+     }
+    }
+   }
+  },
+  "meterread.C_MeterReadingDocumentHistory": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document History",
+   "elements": {
+    "MeterReadingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal MR Doc. ID",
+     "@sap.quickinfo": "Internal ID for meter reading document",
+     "@sap.value.list": "standard",
+     "notNull": true
+    },
+    "MeterReadingReason": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingReason/MeterReadingReason_Text",
+     "@sap.label": "Meter reading reason",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.value.list": "standard",
+     "notNull": true
+    },
+    "UtilitiesInstallation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Installation",
+     "notNull": true
+    },
+    "MeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Meter reading date",
+     "@sap.quickinfo": "Meter reading date relevant to billing"
+    },
+    "MeterReadingTime": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MR Time",
+     "@sap.quickinfo": "Meter Reading Time (Relevant to Billing)"
+    },
+    "UtilitiesDevice": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Device"
+    },
+    "Equipment": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Equipment",
+     "@sap.quickinfo": "Equipment Number"
+    },
+    "UtilitiesRegister": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Register"
+    },
+    "MeterReadingResultValue": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Meter Reading Result"
+    },
+    "MeterReadingConsumption": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Consumption"
+    },
+    "MeterReadingType": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingType/MeterReadingType_Text",
+     "@sap.label": "Meter reading type",
+     "@sap.value.list": "standard"
+    },
+    "MeterReadingStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingStatus/MeterReadingStatus_Text",
+     "@sap.label": "Meter Reading Status",
+     "@sap.value.list": "standard"
+    },
+    "ScheduledMeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Scheduled Meter Reading Date"
+    },
+    "MeterReadingUnit": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingUnit/MeterReadingUnitName",
+     "@sap.label": "Meter Reading Unit",
+     "@sap.value.list": "standard"
+    },
+    "to_MeterReadingReason": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingReason",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingReason",
+        "MeterReadingReason"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingReason"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingStatus": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingStatus",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingStatus",
+        "MeterReadingStatus"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingStatus"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingType": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingType",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingType",
+        "MeterReadingType"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingType"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingUnit": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingUnit",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingUnit",
+        "MeterReadingUnit"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingUnit"
+       ]
+      }
+     ]
+    },
+    "to_MtrReadingDocument": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingDocument",
+     "on": [
+      {
+       "ref": [
+        "to_MtrReadingDocument",
+        "MeterReadingDocument"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingDocument"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "meterread.C_MeterReadingDocumentValdtn": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document Validation",
+   "elements": {
+    "IndepMtrRdngValidationChk": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "IndepMtrRdngValidationChk_Text",
+     "@sap.label": "Indep. validation",
+     "@sap.quickinfo": "Independent validation",
+     "notNull": true
+    },
+    "MeterReadingValidationCheck": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Validation Check",
+     "notNull": true
+    },
+    "IndepMtrRdngValidationChk_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Name of Independent Validation",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterReadingValidationCategory": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Categorization of Plausibility Checks"
+    },
+    "MeterReadingValidationValue": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Current Value"
+    },
+    "MeterReadingValidationExpdVal": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Expected Value"
+    },
+    "MeterReadingValidationMinValue": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Minimum"
+    },
+    "MeterReadingValidationMaxValue": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Maximum"
+    },
+    "MeterReadingValidationDvtn": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Deviation"
+    },
+    "MeterReadingValidationInfo": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Validation Message"
+    }
+   }
+  },
+  "meterread.C_MtrRdngDocumentReasonTP": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document Reason TP",
+   "elements": {
+    "MeterReadingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal MR Doc. ID",
+     "@sap.quickinfo": "Internal ID for meter reading document",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "notNull": true
+    },
+    "MeterReadingReason": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingReason/MeterReadingReason_Text",
+     "@sap.label": "Meter reading reason",
+     "@sap.value.list": "standard",
+     "notNull": true
+    },
+    "UtilitiesInstallation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Installation",
+     "notNull": true
+    },
+    "MeterReadingUnit": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingUnit/MeterReadingUnitName",
+     "@sap.label": "Meter Reading Unit",
+     "@sap.value.list": "standard"
+    },
+    "UtilitiesPortion": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_UtilitiesPortion/UtilitiesPortionName",
+     "@sap.label": "Portion",
+     "@sap.value.list": "standard"
+    },
+    "UtilitiesContract": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Contract",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "ContractAccount": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Contract Account",
+     "@sap.quickinfo": "Contract Account Number",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "ScheduledUtilitiesBillingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Scheduled Billing Date"
+    },
+    "MeterReadingIsSuppressed": {
+     "type": "cds.Boolean",
+     "@sap.label": "Suppressed",
+     "@sap.quickinfo": "Suppressed Indicator"
+    },
+    "MeterReadingRsnScheduledDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Sched. MR date",
+     "@sap.quickinfo": "Scheduled meter reading date"
+    },
+    "MeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Meter reading date",
+     "@sap.quickinfo": "Meter reading date relevant to billing"
+    },
+    "to_MeterReadingReason": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingReason",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingReason",
+        "MeterReadingReason"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingReason"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingUnit": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingUnit",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingUnit",
+        "MeterReadingUnit"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingUnit"
+       ]
+      }
+     ]
+    },
+    "to_UtilitiesPortion": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_UtilitiesPortion",
+     "on": [
+      {
+       "ref": [
+        "to_UtilitiesPortion",
+        "UtilitiesPortion"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "UtilitiesPortion"
+       ]
+      }
+     ]
+    },
+    "to_MtrRdngDocumentTP": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.C_MtrRdngDocumentTP",
+     "on": [
+      {
+       "ref": [
+        "to_MtrRdngDocumentTP",
+        "MeterReadingDocument"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingDocument"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "meterread.C_MtrRdngDocumentTP": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document",
+   "elements": {
+    "MeterReadingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal MR Doc. ID",
+     "@sap.quickinfo": "Internal ID for meter reading document",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "notNull": true
+    },
+    "ReleaseMeterReadingDocument_ac": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Action Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "ReleaseMeterReadingDocuments_ac": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Action Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "ScheduledMeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.filter.restriction": "interval",
+     "@sap.label": "Scheduled Meter Reading Date"
+    },
+    "UtilitiesDevice": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Device"
+    },
+    "MeterReadingReason": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingReason/MeterReadingReason_Text",
+     "@sap.label": "Meter reading reason",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.value.list": "fixed-values"
+    },
+    "ScheduledUtilitiesBillingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Scheduled Billing Date"
+    },
+    "Division": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_Division/Division_Text",
+     "@sap.label": "Division",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.value.list": "fixed-values"
+    },
+    "UtilsDeviceCategoryDescription": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Device Category",
+     "@sap.quickinfo": "Device Category Name"
+    },
+    "UtilitiesDeviceCategory": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "UtilsDeviceCategoryDescription",
+     "@sap.label": "Device category",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "UtilitiesRegister": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Register"
+    },
+    "UtilitiesRegisterTypeName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Name of Register Type",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterReadingUnit": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingUnit/MeterReadingUnitName",
+     "@sap.label": "Meter Reading Unit",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.value.list": "standard"
+    },
+    "UtilitiesPremise": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Premise"
+    },
+    "AddressID": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number"
+    },
+    "UtilsPostalAddressFormatted": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Premise Address"
+    },
+    "UtilitiesInstallation": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Installation"
+    },
+    "MeterReadingStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingStatus/MeterReadingStatus_Text",
+     "@sap.label": "Meter Reading Status",
+     "@sap.value.list": "standard"
+    },
+    "MeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Meter reading date",
+     "@sap.quickinfo": "Meter reading date relevant to billing"
+    },
+    "MeterReadingTime": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MR Time",
+     "@sap.quickinfo": "Meter Reading Time (Relevant to Billing)"
+    },
+    "MeterReadingResultValue": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.unit": "MeterReadingMeasurementUnit",
+     "@sap.label": "Meter Reading Result",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "MeterReadingResultPreDecimals": {
+     "type": "cds.Decimal",
+     "precision": 17,
+     "scale": 0,
+     "@sap.label": "Predec. Places in MR",
+     "@sap.quickinfo": "Places Before Decimal Point in Meter Reading"
+    },
+    "MeterReadingResultDecimals": {
+     "type": "cds.Decimal",
+     "precision": 14,
+     "scale": 14,
+     "@sap.label": "Dec. Places in MR",
+     "@sap.quickinfo": "Places After Decimal Point in the Meter Reading"
+    },
+    "MeterReadingResultDifference": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.unit": "MeterReadingMeasurementUnit",
+     "@sap.label": "MR Difference Based on Previous Result",
+     "@sap.quickinfo": "Meter Reading Difference Based on Previous Result"
+    },
+    "MeterReadingMeasurementUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Unit of meas. for MR",
+     "@sap.quickinfo": "Unit of measurement for meter reading",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "UtilsBillingFactor": {
+     "type": "cds.Decimal",
+     "precision": 12,
+     "scale": 5,
+     "@sap.label": "Billing factor"
+    },
+    "MeterReadingConsumptionActual": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Current Consumption"
+    },
+    "MeterReadingConsumptionExpd": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Expected Consumption"
+    },
+    "MeterReadingOriginEstimation": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Origin of Estimation"
+    },
+    "MeterReadingEstimatedValue": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Expected Meter Reading Result"
+    },
+    "MeterReadingType": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingType/MeterReadingType_Text",
+     "@sap.label": "Meter reading type",
+     "@sap.value.list": "fixed-values"
+    },
+    "MeterReader": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Name of Meter Reader",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterReaderNoteCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReaderNote/MeterReaderNoteCode_Text",
+     "@sap.label": "Meter reading note",
+     "@sap.quickinfo": "Note from meter reader",
+     "@sap.value.list": "standard"
+    },
+    "UtilitiesPortion": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_UtilitiesPortion/UtilitiesPortionName",
+     "@sap.label": "Portion",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.value.list": "standard"
+    },
+    "IndepMtrRdngValidationChk": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_IndepMtrRdngValidationChk/IndepMtrRdngValidationChk_Text",
+     "@sap.label": "Indep. validation",
+     "@sap.quickinfo": "Independent validation",
+     "@sap.value.list": "standard"
+    },
+    "DepdntMtrRdngValidationChk": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_DepdntMtrRdngValidationChk/DepdntMtrRdngValidationChk_Text",
+     "@sap.label": "Dependent validation",
+     "@sap.value.list": "standard"
+    },
+    "UtilitiesRateCategory": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_UtilitiesRateCategory/UtilitiesRateCategory_Text",
+     "@sap.label": "Rate Category",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.value.list": "standard"
+    },
+    "MeterReadingRsnScheduledDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Sched. MR date",
+     "@sap.quickinfo": "Scheduled meter reading date"
+    },
+    "BusinessPartnerName": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Customer"
+    },
+    "BusinessPartner": {
+     "type": "cds.String",
+     "length": 28,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BusinessPartnerName",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number"
+    },
+    "UtilitiesMoveInDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Move-In Date"
+    },
+    "MeterReadingDatesDifference": {
+     "type": "cds.Integer"
+    },
+    "MtrRdngDocHasMltplRsn": {
+     "type": "cds.Boolean",
+     "@sap.label": "Multiple Meter Reading Reasons exist"
+    },
+    "MtrRdngDocHasMltplInst": {
+     "type": "cds.Boolean",
+     "@sap.label": "Multiple Installations exist"
+    },
+    "MtrRdngDocHasMltplMtrRdngUnit": {
+     "type": "cds.Boolean",
+     "@sap.label": "Multiple Meter Reading Units exist",
+     "@sap.quickinfo": "Multiple Meter Reading Unitss exist"
+    },
+    "Equipment": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Equipment",
+     "@sap.quickinfo": "Equipment Number"
+    },
+    "MeterReadingConsumption": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Current Consumption",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MtrRdngValdtnInfoCnsmpnValExpd": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Expected Consumption",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "UtilsMchnLrngRelConfidenceVal": {
+     "type": "cds.Decimal",
+     "precision": 7,
+     "scale": 2
+    },
+    "MtrRdngValdtnInfoCnsmpnActl": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Current Consumption"
+    },
+    "MtrRdngValdtnInfoCnsmpnExpd": {
+     "type": "cds.String",
+     "length": 36,
+     "@sap.label": "Expected Consumption"
+    },
+    "MtrReadingValdtnInfoDcmls": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Decimal places",
+     "@sap.quickinfo": "Places after the decimal in a register",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterRdngOriginEstimationValue": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Origin",
+     "@sap.quickinfo": "Origin of estimated values",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterRdngValidationCurrentVal": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MtrRdngValidationExpectedValue": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterRdngValidationLowerLimit": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MeterRdngValidationUpperLimit": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "MtrRdngValdtnInfoChkRsltValue": {
+     "type": "cds.String",
+     "length": 65,
+     "@sap.label": "Validation Check Value"
+    },
+    "MtrRdngValdtnInfoChkRsltDesc": {
+     "type": "cds.String",
+     "length": 65,
+     "@sap.label": "Validation Check Text"
+    },
+    "NmbrOfUtilsRegDigitsPreDcmls": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Predecimal places",
+     "@sap.quickinfo": "Number of predecimal places for register"
+    },
+    "NmbrOfUtilsRegDigitsDcmls": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Decimal places",
+     "@sap.quickinfo": "Number of decimal places for register"
+    },
+    "MeterReadingDateCriticality": {
+     "type": "cds.Integer",
+     "@odata.Type": "Edm.Byte",
+     "@sap.label": "Meter Reading Date Criticality"
+    },
+    "MeterReadingCategory": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_MeterReadingCategory/MeterReadingCategory_Text",
+     "@sap.label": "MR category",
+     "@sap.quickinfo": "Meter reading category",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCase": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCaseCurrentProcessor": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "UserDescription",
+     "@sap.label": "Processor",
+     "@sap.quickinfo": "Processor for Clarification Case"
+    },
+    "UserDescription": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "User Description"
+    },
+    "BPEMCaseCategory": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMCaseCategory/BPEMCaseCategory_Text",
+     "@sap.label": "Clarification Case Category",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCasePreviousProcessor": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "LastChangedByUserDescription",
+     "@sap.label": "Previous Processor"
+    },
+    "LastChangedByUserDescription": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "User Description"
+    },
+    "BPEMBusinessProcessCode": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMBusinessProcessCode/BPEMBusinessProcessCode_Text",
+     "@sap.label": "Business Process",
+     "@sap.quickinfo": "Business Process Code",
+     "@sap.value.list": "standard"
+    },
+    "BPEMCaseForwardingReason": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMCaseForwardReason/BPEMCaseForwardingReason_Text",
+     "@sap.label": "Forwarding Reason",
+     "@sap.quickinfo": "Reason for Forwarding",
+     "@sap.value.list": "fixed-values"
+    },
+    "BPEMCaseCreationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Clarification Case Creation Date"
+    },
+    "BPEMCaseDueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Clarification Case Due Date"
+    },
+    "BPEMCaseOriginalDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Clarification Case Original Date"
+    },
+    "BPEMCasePriority": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "to_BPEMCasePriority/BPEMCasePriority_Text",
+     "@sap.label": "Clarification Case Priority",
+     "@sap.value.list": "fixed-values"
+    },
+    "BPEMCaseStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.text": "to_OpenBPEMCaseStatus/BPEMCaseStatusName",
+     "@sap.label": "Clarification Case Status",
+     "@sap.value.list": "fixed-values"
+    },
+    "BPEMCaseIsExisting": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Boolean Variable (X = True, - = False, Space = Unknown)",
+     "@sap.heading": ""
+    },
+    "to_BPEMBusinessProcessCode": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMBusinessProcessCode",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMBusinessProcessCode",
+        "BPEMBusinessProcessCode"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMBusinessProcessCode"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCaseCategory": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCaseCategory",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCaseCategory",
+        "BPEMCaseCategory"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseCategory"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCaseForwardReason": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCaseForwardReason",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCaseForwardReason",
+        "BPEMCaseForwardingReason"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseForwardingReason"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCasePriority": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_BPEMCasePriority",
+     "on": [
+      {
+       "ref": [
+        "to_BPEMCasePriority",
+        "BPEMCasePriority"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCasePriority"
+       ]
+      }
+     ]
+    },
+    "to_BPEMCaseTP": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.C_BPEMCaseTP",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_DepdntMtrRdngValidationChk": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_DepdntMtrRdngValdtnChk",
+     "on": [
+      {
+       "ref": [
+        "to_DepdntMtrRdngValidationChk",
+        "DepdntMtrRdngValidationChk"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "DepdntMtrRdngValidationChk"
+       ]
+      }
+     ]
+    },
+    "to_Division": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_Division",
+     "on": [
+      {
+       "ref": [
+        "to_Division",
+        "Division"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Division"
+       ]
+      }
+     ]
+    },
+    "to_IndepMtrRdngValidationChk": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_IndepMtrRdngValdtnChk",
+     "on": [
+      {
+       "ref": [
+        "to_IndepMtrRdngValidationChk",
+        "IndepMtrRdngValidationChk"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "IndepMtrRdngValidationChk"
+       ]
+      }
+     ]
+    },
+    "to_MeterReaderNote": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReaderNote",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReaderNote",
+        "MeterReaderNoteCode"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReaderNoteCode"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingCategory": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingCategory",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingCategory",
+        "MeterReadingCategory"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingCategory"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingDocDvceInfoRecd": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingDocDvceInfoRecd",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_MeterReadingDocSingleAttrib": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingDocSingleAttrib",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_MeterReadingDocumentHistory": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.C_MeterReadingDocumentHistory",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_MeterReadingDocumentValdtn": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.C_MeterReadingDocumentValdtn",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_MeterReadingReason": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingReason",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingReason",
+        "MeterReadingReason"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingReason"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingStatus": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingStatus",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingStatus",
+        "MeterReadingStatus"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingStatus"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingType": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingType",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingType",
+        "MeterReadingType"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingType"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingUnit": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingUnit",
+     "on": [
+      {
+       "ref": [
+        "to_MeterReadingUnit",
+        "MeterReadingUnit"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingUnit"
+       ]
+      }
+     ]
+    },
+    "to_MeterReadingValdtnInfo": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_MeterReadingValdtnInfo",
+     "keys": []
+    },
+    "to_MtrRdngDocumentReasonTP": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Composition",
+     "target": "meterread.C_MtrRdngDocumentReasonTP",
+     "cardinality": {
+      "max": "*"
+     },
+     "on": [
+      {
+       "ref": [
+        "to_MtrRdngDocumentReasonTP",
+        "MeterReadingDocument"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "MeterReadingDocument"
+       ]
+      }
+     ]
+    },
+    "to_OpenBPEMCaseStatus": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_OpenBPEMCaseStatusVH",
+     "on": [
+      {
+       "ref": [
+        "to_OpenBPEMCaseStatus",
+        "BPEMCaseStatus"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "BPEMCaseStatus"
+       ]
+      }
+     ]
+    },
+    "to_PreviousUser": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_User",
+     "keys": []
+    },
+    "to_User": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_User",
+     "keys": []
+    },
+    "to_UtilitiesInstallationHist": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_UtilitiesInstallationHist",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_UtilitiesPortion": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_UtilitiesPortion",
+     "on": [
+      {
+       "ref": [
+        "to_UtilitiesPortion",
+        "UtilitiesPortion"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "UtilitiesPortion"
+       ]
+      }
+     ]
+    },
+    "to_UtilitiesPremise": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_UtilitiesPremise",
+     "keys": []
+    },
+    "to_UtilitiesRateCategory": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.I_UtilitiesRateCategory",
+     "on": [
+      {
+       "ref": [
+        "to_UtilitiesRateCategory",
+        "UtilitiesRateCategory"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "UtilitiesRateCategory"
+       ]
+      }
+     ]
+    }
+   },
+   "actions": {
+    "ReleaseMeterReadingDocument": {
+     "kind": "action",
+     "returns": {
+      "type": "meterread.C_MtrRdngDocumentTP"
+     }
+    },
+    "ReleaseMeterReadingDocuments": {
+     "kind": "action",
+     "returns": {
+      "type": "meterread.C_MtrRdngDocumentTP"
+     }
+    }
+   }
+  },
+  "meterread.I_BPEMBusinessProcessCode": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Business Process Code",
+   "elements": {
+    "BPEMBusinessProcessCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMBusinessProcessCode_Text",
+     "@sap.label": "Business Process",
+     "@sap.quickinfo": "Business Process Code",
+     "notNull": true
+    },
+    "BPEMBusinessProcessCode_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Bus. Proc. Code Name",
+     "@sap.quickinfo": "Business Process Code Name",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "BPEMBusinessProcessArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Proc. Area",
+     "@sap.quickinfo": "Business Process Area"
+    }
+   }
+  },
+  "meterread.I_BPEMBusinessProcessCodeVH": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.searchable": "true",
+   "@sap.content.version": "1",
+   "@sap.label": "BPEM Business Process Code Value Help",
+   "@sap.value.list": "true",
+   "elements": {
+    "BPEMBusinessProcessCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMBusinessProcessCodeName",
+     "@sap.label": "Business Process",
+     "@sap.quickinfo": "Business Process Code",
+     "notNull": true
+    },
+    "BPEMBusinessProcessCodeName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Business Process Name"
+    }
+   }
+  },
+  "meterread.I_BPEMCaseCategory": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Clarification Case Category",
+   "elements": {
+    "BPEMCaseCategory": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMCaseCategory_Text",
+     "@sap.label": "Case Category",
+     "@sap.quickinfo": "Clarification Case Category",
+     "notNull": true
+    },
+    "BPEMCaseCategory_Text": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "Case Category Text",
+     "@sap.quickinfo": "Short Text for Clarification Case Category",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_BPEMCaseCategoryVH": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.searchable": "true",
+   "@sap.content.version": "1",
+   "@sap.label": "BPEM Case Category Value Help",
+   "@sap.value.list": "true",
+   "elements": {
+    "BPEMCaseCategory": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMCaseCategoryName",
+     "@sap.label": "Case Category",
+     "@sap.quickinfo": "Clarification Case Category",
+     "notNull": true
+    },
+    "BPEMCaseCategoryName": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "Case Category Text",
+     "@sap.quickinfo": "Short Text for Clarification Case Category"
+    }
+   }
+  },
+  "meterread.I_BPEMCaseForwardReason": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "fixed-values",
+   "@sap.label": "Clarification Case Forward Reason",
+   "elements": {
+    "BPEMCaseForwardingReason": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMCaseForwardingReason_Text",
+     "@sap.label": "Forwarding Reason",
+     "@sap.quickinfo": "Reason for Forwarding",
+     "notNull": true
+    },
+    "BPEMCaseForwardingReason_Text": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "Forwarding Reason",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_BPEMCasePriority": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "fixed-values",
+   "@sap.label": "Clarification Case Priority",
+   "elements": {
+    "BPEMCasePriority": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMCasePriority_Text",
+     "@sap.label": "Case Priority",
+     "@sap.quickinfo": "Clarification Case Priority",
+     "notNull": true
+    },
+    "BPEMCasePriority_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Clarif.Case Priority",
+     "@sap.quickinfo": "Clarification Case Priority Name",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_BPEMCaseStatus": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "fixed-values",
+   "@sap.label": "Processing Status of Clarification Case",
+   "elements": {
+    "BPEMCaseStatus": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.text": "BPEMCaseStatus_Text",
+     "@sap.label": "Processing Status",
+     "@sap.quickinfo": "Processing Status of Clarification Case",
+     "notNull": true
+    },
+    "BPEMCaseStatus_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Clarif. Case Status",
+     "@sap.quickinfo": "Clarification Case Status Name",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_BPEMCaseVH": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "BPEM Case Value Help",
+   "@sap.value.list": "true",
+   "elements": {
+    "BPEMCase": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case",
+     "notNull": true
+    },
+    "BPEMCaseName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Clarification Case Text"
+    },
+    "BPEMBusinessProcessCode": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Process",
+     "@sap.quickinfo": "Business Process Code"
+    },
+    "BPEMCaseStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case Status"
+    },
+    "BPEMCasePriority": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case Priority"
+    },
+    "BPEMCaseCategory": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case Category"
+    },
+    "BPEMCaseCurrentProcessor": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Processor",
+     "@sap.quickinfo": "Processor for Clarification Case"
+    },
+    "BPEMCaseType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clarification Case Type"
+    }
+   }
+  },
+  "meterread.I_DepdntMtrRdngValdtnChk": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Dependent Meter Reading Validation Check",
+   "elements": {
+    "DepdntMtrRdngValidationChk": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "DepdntMtrRdngValidationChk_Text",
+     "@sap.label": "Dependent validation",
+     "notNull": true
+    },
+    "DepdntMtrRdngValidationChk_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Name of Dependent Validation",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_Division": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.searchable": "true",
+   "@sap.content.version": "1",
+   "@sap.semantics": "fixed-values",
+   "@sap.label": "Division",
+   "elements": {
+    "Division": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "Division_Text",
+     "@sap.label": "Division",
+     "notNull": true
+    },
+    "Division_Text": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.label": "Division Description",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "DivisionOID": {
+     "type": "cds.String",
+     "length": 128,
+     "@sap.label": "Division OID",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    }
+   }
+  },
+  "meterread.I_IndepMtrRdngValdtnChk": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Independent Meter Reading Validation Check",
+   "elements": {
+    "IndepMtrRdngValidationChk": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "IndepMtrRdngValidationChk_Text",
+     "@sap.label": "Indep. validation",
+     "@sap.quickinfo": "Independent validation",
+     "notNull": true
+    },
+    "IndepMtrRdngValidationChk_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Name of Independent Validation",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_MeterReaderNote": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reader Note",
+   "elements": {
+    "MeterReaderNoteCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MeterReaderNoteCode_Text",
+     "@sap.label": "Meter reading note",
+     "@sap.quickinfo": "Note from meter reader",
+     "notNull": true
+    },
+    "MeterReaderNoteCode_Text": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "MR note (text)",
+     "@sap.quickinfo": "Text for meter reading note",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_MeterReadingCategory": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Category",
+   "elements": {
+    "MeterReadingCategory": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MeterReadingCategory_Text",
+     "@sap.label": "MR category",
+     "@sap.quickinfo": "Meter reading category",
+     "notNull": true
+    },
+    "MeterReadingCategory_Text": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Name of Meter Reading Category",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_MeterReadingDocDvceInfoRecd": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document Device Device Info Record",
+   "elements": {
+    "Equipment": {
+     "key": true,
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Equipment",
+     "@sap.quickinfo": "Equipment Number",
+     "notNull": true
+    },
+    "UtilsDeviceValidityEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity End Date of Device",
+     "notNull": true
+    },
+    "SerialNumber": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Device"
+    },
+    "UtilsDeviceValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity Start Date of Device"
+    },
+    "UtilitiesDeviceCategory": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Device category"
+    },
+    "Division": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Division"
+    },
+    "UtilitiesLogicalDeviceNumber": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Logical device no.",
+     "@sap.quickinfo": "Logical device number"
+    },
+    "UtilsDeviceCategoryDescription": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Device Category",
+     "@sap.quickinfo": "Device Category Name"
+    }
+   }
+  },
+  "meterread.I_MeterReadingDocSingleAttrib": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document Single Attributes",
+   "elements": {
+    "MeterReadingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal MR Doc. ID",
+     "@sap.quickinfo": "Internal ID for meter reading document",
+     "notNull": true
+    },
+    "MeterReadingReason": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter reading reason",
+     "notNull": true
+    },
+    "UtilitiesInstallation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Installation",
+     "notNull": true
+    },
+    "MeterReadingReasonPrio": {
+     "type": "cds.Integer"
+    },
+    "UtilitiesInstallationCount": {
+     "type": "cds.Integer"
+    },
+    "MeterReadingReasonCount": {
+     "type": "cds.Integer"
+    },
+    "MeterReadingUnitCount": {
+     "type": "cds.Integer"
+    },
+    "MeterReadingUnit": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter Reading Unit"
+    },
+    "MeterReadingIsSuppressed": {
+     "type": "cds.Boolean",
+     "@sap.label": "Suppressed",
+     "@sap.quickinfo": "Suppressed Indicator"
+    },
+    "MeterReadingRsnScheduledDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Sched. MR date",
+     "@sap.quickinfo": "Scheduled meter reading date"
+    },
+    "ScheduledUtilitiesBillingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Scheduled Billing Date"
+    },
+    "Equipment": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Equipment",
+     "@sap.quickinfo": "Equipment Number"
+    },
+    "ScheduledMeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Scheduled Meter Reading Date"
+    },
+    "UtilitiesRegister": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Register"
+    },
+    "UtilitiesRegisterTypeName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Name of Register Type"
+    },
+    "UtilitiesRateCategory": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Rate Category"
+    },
+    "UtilitiesPremise": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Premise"
+    },
+    "AddressID": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number"
+    },
+    "UtilsPostalAddressFormatted": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.label": "Premise Address"
+    }
+   }
+  },
+  "meterread.I_MeterReadingDocument": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Document",
+   "elements": {
+    "MeterReadingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal MR Doc. ID",
+     "@sap.quickinfo": "Internal ID for meter reading document",
+     "notNull": true
+    },
+    "UtilitiesDevice": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Device"
+    },
+    "SerialNumber": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Device"
+    },
+    "Equipment": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Equipment",
+     "@sap.quickinfo": "Equipment Number"
+    },
+    "UtilitiesRegister": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Register"
+    },
+    "MeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Meter reading date",
+     "@sap.quickinfo": "Meter reading date relevant to billing"
+    },
+    "MeterReadingTime": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MR Time",
+     "@sap.quickinfo": "Meter Reading Time (Relevant to Billing)"
+    },
+    "MeterReadingResultPreDecimals": {
+     "type": "cds.Decimal",
+     "precision": 17,
+     "scale": 0,
+     "@sap.label": "Predec. Places in MR",
+     "@sap.quickinfo": "Places Before Decimal Point in Meter Reading"
+    },
+    "MeterReadingResultDecimals": {
+     "type": "cds.Decimal",
+     "precision": 14,
+     "scale": 14,
+     "@sap.label": "Dec. Places in MR",
+     "@sap.quickinfo": "Places After Decimal Point in the Meter Reading"
+    },
+    "MeterReadingMeasurementUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Unit of meas. for MR",
+     "@sap.quickinfo": "Unit of measurement for meter reading",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "BlldMeterReadingResultPreDcmls": {
+     "type": "cds.Decimal",
+     "precision": 17,
+     "scale": 0,
+     "@sap.label": "Predec. Billed MR",
+     "@sap.quickinfo": "Predecimal Places in Billed Meter Reading"
+    },
+    "BlldMeterReadingResultDcmls": {
+     "type": "cds.Decimal",
+     "precision": 14,
+     "scale": 14,
+     "@sap.label": "DP Billed MR",
+     "@sap.quickinfo": "Decimal Places in the Billed Meter Reading"
+    },
+    "BillingMeasurementUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "MeasUnit for billing",
+     "@sap.quickinfo": "Unit of measurement for billing",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "NmbrOfUtilsRegDigitsPreDcmls": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Predecimal places",
+     "@sap.quickinfo": "Number of predecimal places for register"
+    },
+    "NmbrOfUtilsRegDigitsDcmls": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Decimal places",
+     "@sap.quickinfo": "Number of decimal places for register"
+    },
+    "MeterReadingStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter Reading Status"
+    },
+    "MeterReadingType": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter reading type"
+    },
+    "MeterReadingCategory": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MR category",
+     "@sap.quickinfo": "Meter reading category"
+    },
+    "SchedldMtrReadingCategory": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Scheduled MR categ.",
+     "@sap.quickinfo": "Scheduled meter reading category"
+    },
+    "ScheduledMeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Scheduled Meter Reading Date"
+    },
+    "ActualMeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Actual MR date",
+     "@sap.quickinfo": "Actual meter reading date"
+    },
+    "ActualMeterReadingTime": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Actual MR Time",
+     "@sap.quickinfo": "Actual Meter Reading Time"
+    },
+    "MaximumMeterReadingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Date of maximum MR",
+     "@sap.quickinfo": "Date of maximum meter reading"
+    },
+    "MaximumMeterReadingTime": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Time of Max. MR",
+     "@sap.quickinfo": "Time of Maximum Meter Reading"
+    },
+    "MeterReadingAllocationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "MR Allocation date",
+     "@sap.quickinfo": "Meter reading allocation date"
+    },
+    "UtilitiesGasAllocationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Gas allocation date"
+    },
+    "CtrlMtrReadingOrderSchedldDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Implaus. result date",
+     "@sap.quickinfo": "Meter reading date of implausible meter reading result"
+    },
+    "CtrlMtrReadingOrderSchedldTime": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MR Time of IR",
+     "@sap.quickinfo": "Meter Reading Time of Implausible Meter Reading Result"
+    },
+    "ControlMeterReadingIsPrinted": {
+     "type": "cds.Boolean",
+     "@sap.label": "MR Order Printed",
+     "@sap.quickinfo": "Control Meter Reading Order ID Printed"
+    },
+    "MtrRdngActiveStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter reading active"
+    },
+    "IndepMtrRdngValidationChk": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Indep. validation",
+     "@sap.quickinfo": "Independent validation"
+    },
+    "DepdntMtrRdngValidationChk": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Dependent validation"
+    },
+    "MeterReaderNoteCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter reading note",
+     "@sap.quickinfo": "Note from meter reader"
+    },
+    "MeterReaderNoteFllwUpActn": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "MR note control",
+     "@sap.quickinfo": "Control of follow-up action for MR result with MR note"
+    },
+    "MeterReaderCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter reader",
+     "@sap.quickinfo": "Meter reader number"
+    },
+    "MeterReadingBasePeriodCat": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Base period category"
+    },
+    "MeterReadingCreationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Created On",
+     "@sap.quickinfo": "Record Created On"
+    },
+    "MeterReadingCreatedByUser": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Created By",
+     "@sap.quickinfo": "Name of Person Responsible for Creating the Object"
+    },
+    "MeterReadingLastChangeDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Changed On",
+     "@sap.quickinfo": "Last Changed On"
+    },
+    "MeterReadingLastChangedByUser": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Changed By",
+     "@sap.quickinfo": "Name of Person Who Changed Object"
+    },
+    "AdvancedMeteringSystem": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Adv. Metering System",
+     "@sap.quickinfo": "Advanced Metering System"
+    },
+    "MeterReadingTransferStatus": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter Reading Transfer Status"
+    },
+    "MeterReadingTransferDateTime": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTimeOffset",
+     "@odata.Precision": 7,
+     "@sap.label": "Meter Reading Transfer DateTime"
+    },
+    "AdvncdMeteringDataOrignType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Source System",
+     "@sap.quickinfo": "Source System From Which Data is Requested"
+    },
+    "MobileMeterReadingEntrySystem": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "MDE number",
+     "@sap.quickinfo": "Number for mobile data entry (MDE)"
+    },
+    "MeterReadingOrderIsOutputted": {
+     "type": "cds.Boolean",
+     "@sap.label": "Order was output",
+     "@sap.quickinfo": "Order has been output"
+    },
+    "MeterReadingCheckDigit": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Check number"
+    },
+    "MeterReadingFastEntryNumber": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Entry number",
+     "@sap.quickinfo": "Entry number for fast entry"
+    },
+    "MeterReadingIsRecaptured": {
+     "type": "cds.Boolean",
+     "@sap.label": "Subsequent entry",
+     "@sap.quickinfo": "Meter reading result inserted or modified"
+    },
+    "MeterReadingAutomMntrgStatus": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Autom. mon. status",
+     "@sap.quickinfo": "Status for automatic monitoring of meter reading order"
+    },
+    "MtrRdngIsSchdlForMltplOrdCrtn": {
+     "type": "cds.Boolean",
+     "@sap.label": "Mult. MRO creation",
+     "@sap.quickinfo": "Multiple meter reading order creation"
+    },
+    "MltplMtrRdngOrdCrtnCntrlGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Control Group",
+     "@sap.quickinfo": "Control group for multiple meter reading order creation"
+    },
+    "MltplMtrRdngRefSchedldDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Reference MR date",
+     "@sap.quickinfo": "Scheduled meter reading date for base meter reading"
+    },
+    "OrderType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "PM/SM document cat.",
+     "@sap.quickinfo": "Document category for plant maintenance and customer service"
+    },
+    "ServiceOrder": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Service order/not.",
+     "@sap.quickinfo": "Service order or notification"
+    },
+    "UtilsQuantityDetnProcedure": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Qty.Determ.Procedure",
+     "@sap.quickinfo": "Qty Determination Procedure During Meter Reading / Billing"
+    }
+   }
+  },
+  "meterread.I_MeterReadingReason": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "fixed-values",
+   "@sap.label": "Meter Reading Reason",
+   "elements": {
+    "MeterReadingReason": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MeterReadingReason_Text",
+     "@sap.label": "Meter reading reason",
+     "notNull": true
+    },
+    "MeterReadingReason_Text": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Name of Meter Reading Reason",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_MeterReadingStatus": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Status",
+   "elements": {
+    "MeterReadingStatus": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MeterReadingStatus_Text",
+     "@sap.label": "Meter Reading Status",
+     "notNull": true
+    },
+    "MeterReadingStatus_Text": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Name of Meter Reading Status",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_MeterReadingType": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "fixed-values",
+   "@sap.label": "Meter Reading Type",
+   "elements": {
+    "MeterReadingType": {
+     "key": true,
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MeterReadingType_Text",
+     "@sap.label": "Meter reading type",
+     "notNull": true
+    },
+    "MeterReadingType_Text": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Name of Meter Reading Type",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    }
+   }
+  },
+  "meterread.I_MeterReadingUnit": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Unit",
+   "elements": {
+    "MeterReadingUnit": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "MeterReadingUnitName",
+     "@sap.label": "Meter Reading Unit",
+     "notNull": true
+    },
+    "UtilitiesPortion": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Portion"
+    },
+    "UtilsMtrRdngIntervalInDays": {
+     "type": "cds.Decimal",
+     "precision": 2,
+     "scale": 0,
+     "@sap.label": "Meter Reading Interval"
+    },
+    "AuthorizationGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Authorization Group"
+    },
+    "MeterReadingUnitName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Meter Reading Unit Name"
+    }
+   }
+  },
+  "meterread.I_MeterReadingValdtnInfo": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Meter Reading Validation Info",
+   "elements": {
+    "MeterReadingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Internal MR Doc. ID",
+     "@sap.quickinfo": "Internal ID for meter reading document",
+     "notNull": true
+    },
+    "MeterReadingConsumption": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Current Consumption"
+    },
+    "MtrRdngValdtnInfoCnsmpnValExpd": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Expected Consumption"
+    },
+    "MtrReadingValdtnInfoDcmls": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Decimal places",
+     "@sap.quickinfo": "Places after the decimal in a register"
+    },
+    "MeterRdngOriginEstimationValue": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Origin",
+     "@sap.quickinfo": "Origin of estimated values"
+    },
+    "MeterRdngValidationCurrentVal": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption"
+    },
+    "MtrRdngValidationExpectedValue": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption"
+    },
+    "MeterRdngValidationLowerLimit": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption"
+    },
+    "MeterRdngValidationUpperLimit": {
+     "type": "cds.Decimal",
+     "precision": 31,
+     "scale": 14,
+     "@sap.label": "Intern",
+     "@sap.quickinfo": "INTERNAL: calculation format for readings and consumption"
+    }
+   }
+  },
+  "meterread.I_OpenBPEMCaseStatusVH": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Open BPEM Case Status Value Help",
+   "elements": {
+    "BPEMCaseStatus": {
+     "key": true,
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "BPEMCaseStatusName",
+     "@sap.label": "Clarification Case Status",
+     "notNull": true
+    },
+    "BPEMCaseStatusName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Clarification Case Status Name"
+    }
+   }
+  },
+  "meterread.I_User": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "User",
+   "elements": {
+    "UserID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "UserDescription",
+     "@sap.label": "User ID",
+     "notNull": true
+    },
+    "UserDescription": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "User Description"
+    },
+    "IsTechnicalUser": {
+     "type": "cds.String",
+     "length": 1
+    }
+   }
+  },
+  "meterread.I_UtilitiesInstallationHist": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Installation History",
+   "elements": {
+    "UtilitiesInstallation": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Installation",
+     "notNull": true
+    },
+    "UtilsInstHistValidityEndDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity End Date of Installation",
+     "notNull": true
+    },
+    "UtilsInstHistValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity Start Date of Installation"
+    },
+    "UtilitiesRateCategory": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Rate Category"
+    },
+    "UtilitiesBillingSchema": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Billing Schema",
+     "@sap.quickinfo": "Number of the billing schema"
+    },
+    "UtilitiesBillingClass": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Billing Class"
+    },
+    "MeterReadingUnit": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Meter Reading Unit"
+    },
+    "UtilitiesTemperatureArea": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Temperature area"
+    },
+    "UtilsInstIsExmptFrmFrnchsFee": {
+     "type": "cds.Boolean",
+     "@sap.label": "Exempt from FF",
+     "@sap.quickinfo": "Exempt from franchise fee"
+    },
+    "UtilsInstDvceAllctnIsNotAllwd": {
+     "type": "cds.Boolean",
+     "@sap.label": "No device allocation",
+     "@sap.quickinfo": "Device allocation is not possible"
+    },
+    "UtilitiesFranchiseContract": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Franchise contract"
+    },
+    "UtilitiesBillingParty": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Billing Serv. Prov.",
+     "@sap.quickinfo": "Service Provider that Bills the Installation"
+    },
+    "UtilitiesInvoicingParty": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Invoicng Serv. prov.",
+     "@sap.quickinfo": "Service Provider That Invoices the Contract"
+    },
+    "ObligatorySupUtilsSrvcProvider": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Obligation to Supply"
+    },
+    "PrimaryUtilitiesInstallation": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Primary Installation",
+     "@sap.quickinfo": "Key of Primary Installation"
+    },
+    "UtilsInstallationGroupRole": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Installation Role",
+     "@sap.quickinfo": "Role of an Installation Within the Installation Group"
+    },
+    "UtilsInstallationGroupType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Grouping Type",
+     "@sap.quickinfo": "Grouping Type for Installation Group"
+    },
+    "HigherLevelUtilsInstallation": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "High.-Level Installn",
+     "@sap.quickinfo": "Higher-Level Installation"
+    },
+    "UnbilldRevnXtrapltnType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Extrapolation type",
+     "@sap.quickinfo": "Type of extrapolation in unbilled revenue reporting"
+    },
+    "UtilsRegDepdntValdtnGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Val. group dep. vals",
+     "@sap.quickinfo": "Validation group for dependent validations"
+    },
+    "IndustrySector": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Industry"
+    }
+   }
+  },
+  "meterread.I_UtilitiesPortion": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Portion",
+   "elements": {
+    "UtilitiesPortion": {
+     "key": true,
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "UtilitiesPortionName",
+     "@sap.label": "Portion",
+     "notNull": true
+    },
+    "UtilitiesPortionName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Portion Name"
+    },
+    "AuthorizationGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Authorization Group"
+    },
+    "UtilsDefaultBdgtBillgCycle": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Budget Billing Cycle"
+    }
+   }
+  },
+  "meterread.I_UtilitiesPremise": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Premise",
+   "elements": {
+    "UtilitiesPremise": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Premise",
+     "notNull": true
+    },
+    "NumberOfPersons": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Number of persons"
+    },
+    "UtilitiesOwner": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Owner"
+    },
+    "UtilitiesConnectionObject": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Connection Object"
+    },
+    "UtilitiesPremiseCreationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Created On",
+     "@sap.quickinfo": "Record Created On"
+    },
+    "UtilsPremiseIsMainResidence": {
+     "type": "cds.Boolean",
+     "@sap.label": "Main resid.",
+     "@sap.quickinfo": "Main residence"
+    },
+    "FunctionalLocation": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Functional location"
+    },
+    "AuthorizationGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Authorization Group"
+    },
+    "UtilitiesPremiseType": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Type of premise"
+    },
+    "DeletionIndicator": {
+     "type": "cds.Boolean",
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Deletion Indicator"
+    },
+    "LocationSupplement": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Location Supplement",
+     "@sap.quickinfo": "Additional Information on Location"
+    },
+    "Floor": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.label": "Floor",
+     "@sap.quickinfo": "Floor in building"
+    },
+    "HouseNumberSupplementText": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.label": "Supplement",
+     "@sap.quickinfo": "House number supplement"
+    },
+    "RoomNumber": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.label": "Room Number",
+     "@sap.quickinfo": "Room or Apartment Number"
+    },
+    "StreetSupplement1": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Street 3"
+    },
+    "StreetSupplement2": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Street 5"
+    }
+   }
+  },
+  "meterread.I_UtilitiesRateCategory": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Rate Category",
+   "elements": {
+    "UtilitiesRateCategory": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.text": "UtilitiesRateCategory_Text",
+     "@sap.label": "Rate category",
+     "notNull": true
+    },
+    "UtilitiesRateCategory_Text": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Rate Category Name",
+     "@sap.quickinfo": "Name for Rate Category",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "UtilsOutsrtgCheckGrpForBillg": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Outsorting Check Group"
+    },
+    "Division": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Division"
+    },
+    "UtilitiesBillingClass": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Billing Class"
+    }
+   }
+  },
+  "meterread.SAP__Currencies": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "CurrencyCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 5,
+     "@sap.label": "Currency",
+     "@sap.semantics": "currency-code",
+     "notNull": true
+    },
+    "ISOCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "ISO code",
+     "notNull": true
+    },
+    "Text": {
+     "type": "cds.String",
+     "length": 15,
+     "@sap.label": "Short text",
+     "notNull": true
+    },
+    "DecimalPlaces": {
+     "type": "cds.Integer",
+     "@odata.Type": "Edm.Byte",
+     "@sap.label": "Decimals",
+     "notNull": true
+    }
+   }
+  },
+  "meterread.SAP__UnitsOfMeasure": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "UnitCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Internal UoM",
+     "@sap.semantics": "unit-of-measure",
+     "notNull": true
+    },
+    "ISOCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "ISO Code",
+     "notNull": true
+    },
+    "ExternalCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Commercial",
+     "notNull": true
+    },
+    "Text": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Measurement Unit Txt",
+     "notNull": true
+    },
+    "DecimalPlaces": {
+     "type": "cds.Integer",
+     "@sap.label": "Decimal Places"
+    }
+   }
+  },
+  "meterread.SAP__MyDocumentDescriptions": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "notNull": true
+    },
+    "CreatedBy": {
+     "type": "cds.String",
+     "length": 12,
+     "notNull": true
+    },
+    "CreatedAt": {
+     "type": "cds.DateTime",
+     "@odata.Type": "Edm.DateTime",
+     "@sap.label": "Time Stamp",
+     "notNull": true
+    },
+    "FileName": {
+     "type": "cds.String",
+     "length": 256,
+     "notNull": true
+    },
+    "Title": {
+     "type": "cds.String",
+     "length": 256,
+     "notNull": true
+    },
+    "Format": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.SAP__FormatSet",
+     "on": [
+      {
+       "ref": [
+        "Format",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "TableColumns": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.SAP__TableColumnsSet",
+     "cardinality": {
+      "max": "*"
+     },
+     "on": [
+      {
+       "ref": [
+        "TableColumns",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "CoverPage": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.SAP__CoverPageSet",
+     "cardinality": {
+      "max": "*"
+     },
+     "on": [
+      {
+       "ref": [
+        "CoverPage",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "Signature": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.SAP__SignatureSet",
+     "on": [
+      {
+       "ref": [
+        "Signature",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "PDFStandard": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "meterread.SAP__PDFStandardSet",
+     "on": [
+      {
+       "ref": [
+        "PDFStandard",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "meterread.SAP__FormatSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "FitToPage": {
+     "type": "meterread.SAP__FitToPage",
+     "notNull": true
+    },
+    "FontSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Orientation": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "PaperSize": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "BorderSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "MarginSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "FontName": {
+     "type": "cds.String",
+     "length": 255,
+     "@sap.label": "Font Name",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "meterread.SAP__PDFStandardSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "UsePDFAConformance": {
+     "type": "cds.Boolean",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "DoEnableAccessibility": {
+     "type": "cds.Boolean",
+     "@sap.label": "Indicator",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "meterread.SAP__TableColumnsSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Name": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Header": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "HorizontalAlignment": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "meterread.SAP__CoverPageSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Title": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Name": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Value": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "meterread.SAP__SignatureSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "DoSign": {
+     "type": "cds.Boolean",
+     "@sap.label": "Indicator",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Reason": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "meterread.SAP__ValueHelpSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "VALUEHELP": {
+     "key": true,
+     "type": "cds.LargeString",
+     "notNull": true
+    },
+    "FIELD_VALUE": {
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "DESCRIPTION": {
+     "type": "cds.LargeString"
+    }
+   }
+  },
+  "meterread.SAP__FitToPage": {
+   "kind": "type",
+   "@cds.external": true,
+   "elements": {
+    "ErrorRecoveryBehavior": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.label": "Error behavior",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "IsEnabled": {
+     "type": "cds.Boolean",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "MinimumFontSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  }
+ }
+}

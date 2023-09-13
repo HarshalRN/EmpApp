@@ -1,0 +1,43 @@
+{
+  "name": "meterreading",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.4.0",
+    "@sap-cloud-sdk/resilience": "^3.4.0",
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "meterread": {
+        "kind": "odata-v2",
+        "model": "srv/external/meterread",
+        "csrf": true,
+        "csrfInBatch": true,
+        "credentials": {
+          "destination": "AS4",
+          "path": "/sap/opu/odata/SAP/ISU_MR_IMPL_RESOLVE",
+          "requestTimeout": 30000
+        }
+      },
+      "destinations": true,
+      "connectivity": true,
+      "auth": "xsuaa"
+    }
+  }
+}

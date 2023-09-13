@@ -1,0 +1,15 @@
+@server = http://localhost:4004
+# @me = Authorization: Basic {{$processEnv USER}}:
+# @me = Authorization: 
+### ------------------------------------------------------------------------
+# Create book
+POST {{server}}/odata/v4/catalog/ReleaseMeterReadingDocument?MeterReadingDocument='00000000008000005213'
+Content-Type: application/json;IEEE754Compatible=true
+
+{
+
+}
+
+### ------------------------------------------------------------------------
+# Create book
+GET {{server}}/v2/odata/v4/catalog/MeterReadingDocument?$filter=MeterReadingStatus eq '2'
