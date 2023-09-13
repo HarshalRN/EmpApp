@@ -1,12 +1,11 @@
 const cds = require('@sap/cds');
-
+// const cds = require('@sap/cds');
 module.exports = cds.service.impl(async function() {
 	const { MeterReadingDocument } = this.entities;
 	const service = await cds.connect.to('meterread');
 	this.on('READ', MeterReadingDocument, request => {
 		return service.tx(request).run(request.query);
 	});
-
 	 this.on('ReleaseMeterReadingDocument', async (req)=>{
 		const serviceref = await cds.connect.to("meterread");
 	 	// const input = { MeterReadingDocument:'7000005302'};
