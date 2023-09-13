@@ -13,5 +13,6 @@ service CatalogService {
     }
     action ReleaseMeterReadingDocument(MeterReadingDocument:String(20)) 
     returns C_MtrRdngDocumentTP;
+    //  returns C_MtrRdngDocumentTP;
     
 }
